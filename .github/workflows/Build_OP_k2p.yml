@@ -68,11 +68,6 @@ jobs:
         sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
         ./scripts/feeds update -a
         ./scripts/feeds install -a    
-
-    - name: Import external feeds
-      working-directory: ./openwrt
-      run: |
-        git clone https://github.com/jerrykuku/luci-app-jd-dailybonus ./package/luci-app-jd-dailybonus
         
     - name: Configuration Customization - Build_k2p
       env:
