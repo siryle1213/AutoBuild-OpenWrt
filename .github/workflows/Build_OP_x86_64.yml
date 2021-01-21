@@ -66,11 +66,8 @@ jobs:
       working-directory: ./openwrt
       run: |
         sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
-        sed -i '$a src-git openwrt_passwall https://github.com/xiaorouji/openwrt-passwall' ./feeds.conf.default
         ./scripts/feeds update -a
-        ./scripts/feeds install -a
-                
-        git clone https://github.com/ledewrt/luci-app-ledeproxy package/luci-app-ledeproxy      
+        ./scripts/feeds install -a  
 
     - name: Configuration Customization - Build_x86_64
       env:
